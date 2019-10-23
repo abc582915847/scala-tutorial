@@ -1,4 +1,4 @@
-package scala.extractor
+package com.test.extractor
 
 class ExtractorTest {
 

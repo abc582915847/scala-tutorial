@@ -7,12 +7,13 @@
 <!-- For professional support please see                            -->
 <!--    http://www.qos.ch/shop/products/professionalSupport         -->
 <!--                                                                -->
-<configuration  debug="false">
-    <property name="LOG_HOME" value="/Users/Tao/tao/github/scala-tutorial/logs"/>
+<configuration debug="false">
+    <property name="LOG_HOME" value="logs"/>
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <!-- encoder 默认配置为PatternLayoutEncoder -->
         <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%5level] %logger{50} - %msg%n</pattern>
+            <!--            <pattern>%d{HH:mm:ss.SSS} [%5level] %logger{50} - %msg%n</pattern>-->
+            <pattern>%d{HH:mm:ss.SSS} TKD [%thread] %-5level %logger{36} - %msg%n</pattern>
             <charset>UTF-8</charset>
         </encoder>
     </appender>
@@ -26,7 +27,8 @@
         <encoder>
             <pattern class="ch.qos.logback.classic.PatternLayout">
                 <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
-                <pattern>%d{yyyy-MM-dd HH:mm:SSS} [%5level] %logger{50} - %msg%n</pattern>
+                <!--                <pattern>%d{yyyy-MM-dd HH:mm:SSS} [%5level] %logger{50} - %msg%n</pattern>-->
+                <pattern>%d{HH:mm:ss.SSS} TKD [%thread] %-5level %logger{36} - %msg%n</pattern>
             </pattern>
             <charset>UTF-8</charset>
         </encoder>
@@ -36,9 +38,9 @@
         </triggeringPolicy>
     </appender>
 
-<!--    <root level="INFO">-->
+    <!--    <root level="INFO">-->
     <root level="${logback-log-level:-info}" additivity="false">
-        <appender-ref ref="log-scala-appender" />
+        <appender-ref ref="log-scala-appender"/>
         <appender-ref ref="STDOUT"/>
     </root>
 

@@ -1,6 +1,8 @@
-package scala.io
+package com.test.io
 
 import java.io.{File, PrintWriter}
+
+import scala.io.{Source, StdIn}
 
 
 object WirteAndReadFile {
